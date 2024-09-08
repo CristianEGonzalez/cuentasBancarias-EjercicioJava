@@ -18,8 +18,6 @@ public abstract class CuentaBancaria {
 	
 	//Setter de Saldo para cambiarlo de protected a private
 	protected void updateSaldo(Double valor){
-		if(saldo > 0) {
 			this.saldo = valor;
-		}
 	}
 }
