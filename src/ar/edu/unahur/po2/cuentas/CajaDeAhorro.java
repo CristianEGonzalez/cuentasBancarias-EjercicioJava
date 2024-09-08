@@ -6,11 +6,11 @@ public class CajaDeAhorro extends CuentaBancaria {
 
 	@Override
 	public void extraer(Double valorAExtraer) {
-		if (this.saldo >= valorAExtraer && valorAExtraer > 0 && this.contador < 5) {
-			this.saldo = this.saldo - valorAExtraer;
+		if (this.saldo() >= valorAExtraer && valorAExtraer > 0 && this.contador < 5) {
+			this.updateSaldo(this.saldo() - valorAExtraer);
 			this.contador = this.contador + 1;
-		} else if (this.saldo >= valorAExtraer + 6 && valorAExtraer > 0 && this.contador >= 5) {
-			this.saldo = this.saldo - valorAExtraer - 6;
+		} else if (this.saldo() >= valorAExtraer + 6 && valorAExtraer > 0 && this.contador >= 5) {
+			this.updateSaldo(this.saldo() - valorAExtraer - 6);
 			this.contador = this.contador + 1;
 		}
 	}

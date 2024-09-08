@@ -66,7 +66,7 @@ public class CuentaCorrienteTest {
 		Double valorEsperado = 50.0;
 		cuenta.depositar(valorADepositar);
 		cuenta.extraer(valoerAExtraer);
-		assertEquals(cuenta.limiteTotal(),valorEsperado);
+		assertEquals(cuenta.limiteCuenta(),valorEsperado);
 	}
 	
 }

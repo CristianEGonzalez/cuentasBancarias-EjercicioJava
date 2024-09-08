@@ -7,17 +7,17 @@ public class CuentaCorriente extends CuentaBancaria{
 		this.limiteAdicional = limiteAdicional;
 	}
 	
-	public Double limiteTotal() {
+	public Double limiteCuenta() {
 		return this.limiteAdicional + this.saldo();
 	}
 	
 	@Override
 	public void extraer(Double valorAExtraer) {
-		if (this.saldo >= valorAExtraer && valorAExtraer > 0) {
-			this.saldo = this.saldo - valorAExtraer;
-		}else if (this.limiteTotal()>= valorAExtraer && valorAExtraer > 0) {
+		if (this.saldo() >= valorAExtraer && valorAExtraer > 0) {
+			this.updateSaldo(this.saldo() - valorAExtraer);
+		}else if (this.limiteCuenta()>= valorAExtraer && valorAExtraer > 0) {
 			this.limiteAdicional -= valorAExtraer - this.saldo();
-			this.saldo = 0.0;
+			this.updateSaldo(0.0);
 		}
 	}
 

@@ -2,7 +2,7 @@ package ar.edu.unahur.po2.cuentas;
 
 public abstract class CuentaBancaria {
 
-	protected Double saldo = 0.0;
+	private Double saldo = 0.0;
 	
 	public Double saldo() {
 		return this.saldo;
@@ -17,7 +17,7 @@ public abstract class CuentaBancaria {
 	public abstract void extraer(Double valorAExtraer);
 	
 	//Setter de Saldo para cambiarlo de protected a private
-	protected void setSaldo(Double valor){
+	protected void updateSaldo(Double valor){
 		if(saldo > 0) {
 			this.saldo = valor;
 		}
